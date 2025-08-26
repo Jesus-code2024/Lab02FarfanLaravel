@@ -17,6 +17,9 @@ WORKDIR /app
 # Copiar archivos del proyecto
 COPY . .
 
+# Copiar .env.example como .env
+RUN cp .env.example .env
+
 # Instalar dependencias de Laravel
 RUN composer install --no-dev --optimize-autoloader
 
